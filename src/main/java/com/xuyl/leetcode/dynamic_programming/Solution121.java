@@ -42,7 +42,7 @@ class Solution121 {
             if (a < 0) {
                 min = prices[i];
             } else {
-                maxProfit = a > maxProfit ? a : maxProfit;
+                maxProfit = Math.max(a, maxProfit);
             }
         }
         return maxProfit;

@@ -38,14 +38,13 @@ public class Solution53 {
         int max = nums[0];
         int historyMax = max;
         for (int i = 1; i < nums.length; i++) {
-            int a = 0;
-            a = (max + nums[i] > nums[i]) ? max + nums[i] : nums[i];
+            int a = Math.max(max + nums[i], nums[i]);
             if (max > a && max > historyMax) {
                 historyMax = max;
             }
             max = a;
         }
-        return max > historyMax ? max : historyMax;
+        return Math.max(max, historyMax);
     }
 
     public static void main(String[] args) {

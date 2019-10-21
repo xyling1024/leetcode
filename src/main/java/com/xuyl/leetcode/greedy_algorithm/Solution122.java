@@ -31,19 +31,28 @@ package com.xuyl.leetcode.greedy_algorithm;//给定一个数组，它的第 i �
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution122 {
     /**
-     * 贪心算法 todo
+     * 贪心算法: 计算每一步的最优解,最后得到的就是 整体的最优解.
+     * 遍历所有对象执行以下操作:
+     * 1. 如果num[i] < num[i-1], 卖掉股票即: max += (num[i-1] - prev); 并将num[i]作为下一次买入的值即: prev = num[i].
+     * 2. 如果num[i] >= num[i-1]且i为最后一个元素, 那么卖掉股票即: max += (num[i-1] - prev);
+     *
      * @param prices
      * @return
      */
     public int maxProfit(int[] prices) {
+        if ( prices == null || prices.length <= 0 ) {
+            return 0;
+        }
         int max = 0;
         int prev = prices[0];
         for (int i = 1; i < prices.length; i++) {
             if (prices[i] < prices[i - 1]) {
                 if ( i != 1) {
-                    max += (prices[i] - prev);
+                    max += (prices[i-1] - prev);
                 }
                 prev = prices[i];
+            } else if ( i == prices.length - 1) {
+                max += (prices[i] - prev);
             }
         }
         return max;
