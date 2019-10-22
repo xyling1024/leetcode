@@ -3,7 +3,7 @@ package com.xuyl.other;
 
 /**
  *
- * 给定一个有序整数数组 nums 与整数 K, 如何证明 nums 中 是否存在两个数相加使得和等于 K ?
+ * 给定一个有序整数数组 nums 与整数 K, 求证 nums 中 是否存在两个数相加使得和等于 K .
  * 如果要证明 nums 中 是否存在三个数相加使得和等于 K 呢?
  *
  * @class: com.xuyl.other.Other1
