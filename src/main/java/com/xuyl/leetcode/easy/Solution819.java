@@ -42,6 +42,10 @@ import java.util.Arrays;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution819 {
     /**
+     * todo 可优化
+     * 执行用时 : 30 ms, 在所有 java 提交中击败了50.25%的用户
+     * 内存消耗 : 37.7 MB, 在所有 java 提交中击败了79.68%的用户
+     *
      * 将paragraph按空格切割成数组, 然后对这些数组进行排序, 这样相同的单词一定会在一起.
      * 对banned同样进行排序操作.
      * 我们对这些排好序的单词进行遍历, 每当发现一个与前面单词不一样的新单词, 去banned通过指针进行查找,一旦发现banned索引位置处的单词 > 当前遍历到的单词, 说明不在banned中. 继续下一次遍历.
@@ -59,17 +63,17 @@ class Solution819 {
         // ================ 处理数据 end ===============
 
         int curFreq = 1;
-        int max = 1;
-        int resultIndex = 0;
+        int max = 0;
+        int resultIndex = strList.length - 1;
         int bannedIndex = 0;
-        for (int i = 1; i < strList.length; i++) {
-            // 当前对象与上一个对象不等, 或者当前对象为最后一个对象
-            if ( !strList[i].trim().equals(strList[i - 1].trim()) || i == strList.length - 1 ) {
+        for (int i = 1; i <= strList.length; i++) {
+            // 当前对象与上一个对象不等, 或者上一个对象为最后一个对象
+            if ( i == strList.length || !strList[i].equals(strList[i - 1]) ) {
                 if ( curFreq > max ) {
                     boolean isBanned = false;
                     // 判断是否在banned中
                     while (bannedIndex < banned.length) {
-                        int value = banned[bannedIndex].compareTo(strList[i - 1].trim());
+                        int value = banned[bannedIndex].compareTo(strList[i - 1]);
                         if ( value == 0 ) {
                             isBanned = true;
                             break;
@@ -82,23 +86,19 @@ class Solution819 {
                     if ( !isBanned ) {
                         resultIndex = i - 1;
                         max = curFreq;
-                        curFreq = 1;
-                    } else {
-                        curFreq = 0;
                     }
                 }
+                curFreq = 1;
             } else {
                 curFreq++;
             }
         }
-        return strList[resultIndex].trim();
+        return strList[resultIndex];
     }
 
     public static void main(String[] args) {
-        /**
-         "abc abc? abcd the jeff!"
-         ["abc","abcd","jeff"]
-         */
+//        String paragraph = "L, P! X! C; u! P? w! P. G, S? l? X? D. w? m? f? v, x? i. z; x' m! U' M! j? V; l. S! j? r, K. O? k? p? p, H! t! z' X! v. u; F, h; s? X? K. y, Y! L; q! y? j, o? D' y? F' Z; E? W; W' W! n! p' U. N; w? V' y! Q; J, o! T? g? o! N' M? X? w! V. w? o' k. W. y, k; o' m! r; i, n. k, w; U? S? t; O' g' z. V. N? z, W? j! m? W! h; t! V' T! Z? R' w, w? y? y; O' w; r? q. G, V. x? n, Y; Q. s? S. G. f, s! U? l. o! i. L; Z' X! u. y, Q. q; Q, D; V. m. q. s? Y, U; p? u! q? h? O. W' y? Z! x! r. E, R, r' X' V, b. z, x! Q; y, g' j; j. q; W; v' X! J' H? i' o? n, Y. X! x? h? u; T? l! o? z. K' z' s; L? p? V' r. L? Y; V! V' S. t? Z' T' Y. s? i? Y! G? r; Y; T! h! K; M. k. U; A! V? R? C' x! X. M; z' V! w. N. T? Y' w? n, Z, Z? Y' R; V' f; V' I; t? X? Z; l? R, Q! Z. R. R, O. S! w; p' T. u? U! n, V, M. p? Q, O? q' t. B, k. u. H' T; T? S; Y! S! i? q! K' z' S! v; L. x; q; W? m? y, Z! x. y. j? N' R' I? r? V! Z; s, O? s; V, I, e? U' w! T? T! u; U! e? w? z; t! C! z? U, p' p! r. x; U! Z; u! j; T! X! N' F? n! P' t, X. s; q'";
+//        String[] banned = {"m","i","s","w","y","d","q","l","a","p","n","t","u","b","o","e","f","g","c","x"};
         String paragraph = "abc abc? abcd the jeff!";
         String[] banned = {"abc","abcd","jeff"};
         System.out.println(new Solution819().mostCommonWord(paragraph, banned));
