@@ -67,7 +67,7 @@ class Solution1025 {
         if (N <= 1) return false;
         boolean flag = true;
         List<Integer> divisorNum = NumUtils.divisorNum(N);
-        divisorNum.add(1);
+        divisorNum.remove(divisorNum.indexOf(N));
         for (Integer num : divisorNum) {
             flag = flag && dynamicProgramming(N - num);
         }
@@ -86,7 +86,7 @@ class Solution1025 {
             boolean flag = true;
             if (N > 1) {
                 List<Integer> divisorNum = NumUtils.divisorNum(N);
-                divisorNum.add(1);
+                divisorNum.remove(divisorNum.indexOf(N));
                 for (Integer num : divisorNum) {
                     flag = flag && memorizedSearch(N - num, dict);
                 }
@@ -111,7 +111,7 @@ class Solution1025 {
             }
             boolean flag = true;
             List<Integer> divisorNum = NumUtils.divisorNum(i);
-            divisorNum.add(1);
+            divisorNum.remove(divisorNum.indexOf(i));
             for (Integer num : divisorNum) {
                 flag = flag && dict[i - num];
             }
@@ -122,8 +122,8 @@ class Solution1025 {
 
     public static void main(String[] args) {
         Solution1025 solution1025 = new Solution1025();
-        for (int i = 1; i < 100; i++) {
-            if (solution1025.memorizedSearch(i) != solution1025.divisorGame(i)) {
+        for (int i = 1; i < 50; i++) {
+            if (solution1025.memorizedSearch(i, null) != solution1025.divisorGame(i)) {
                 System.out.println("failed:" + i + "; memorizedSearch:" + solution1025.memorizedSearch(i));
                 return;
             }
