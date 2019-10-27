@@ -33,6 +33,8 @@ package com.xuyl.leetcode.easy;
 // Related Topics 数组
 
 
+import org.junit.jupiter.api.Test;
+
 import java.sql.SQLOutput;
 
 //leetcode submit region begin(Prohibit modification and deletion)
@@ -65,9 +67,10 @@ class Solution747 {
                 (nums[maxIndex]/nums[secondIndex] >= 2 ? maxIndex : -1);
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         int[] nums = {1, 2, 3, 4};
-        System.out.println(new Solution747().dominantIndex(nums));
+        System.out.println(dominantIndex(nums));
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
