@@ -1,4 +1,4 @@
-package com.xuyl.leetcode.easy;
+package com.xuyl.leetcode.array;
 //在一个给定的数组nums中，总是存在一个最大元素 。
 //
 // 查找数组中的最大元素是否至少是数组中每个其他数字的两倍。 
