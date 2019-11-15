@@ -28,6 +28,8 @@ package com.xuyl.leetcode.greedy_algorithm;//给定一个数组，它的第 i �
 //解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。 
 // Related Topics 贪心算法 数组
 
+import org.junit.jupiter.api.Test;
+
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution122 {
     /**
@@ -58,9 +60,10 @@ class Solution122 {
         return max;
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         int[] prices = {7,1,5,3,6,4};
-        System.out.println(new Solution122().maxProfit(prices));
+        System.out.println(maxProfit(prices));
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

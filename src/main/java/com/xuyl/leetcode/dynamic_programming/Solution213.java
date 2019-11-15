@@ -19,6 +19,8 @@ package com.xuyl.leetcode.dynamic_programming;
 // Related Topics 动态规划
 
 
+import org.junit.jupiter.api.Test;
+
 import java.util.Arrays;
 
 //leetcode submit region begin(Prohibit modification and deletion)
@@ -47,9 +49,10 @@ class Solution213 {
         return rob;
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void testRob() {
         int[] nums = {1,1,1,1};
-        System.out.println(new Solution213().rob(nums));
+        System.out.println(rob(nums));
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

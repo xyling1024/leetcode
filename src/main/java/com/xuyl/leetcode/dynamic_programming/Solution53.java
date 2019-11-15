@@ -14,6 +14,8 @@ package com.xuyl.leetcode.dynamic_programming;
 // Related Topics 数组 分治算法 动态规划
 
 
+import org.junit.jupiter.api.Test;
+
 /**
  * @description: 求连续子数组的最大和
  * @author: yaling.xu
@@ -47,8 +49,9 @@ public class Solution53 {
         return Math.max(max, historyMax);
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void testMaxSubArray() {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        System.out.println(new Solution53().maxSubArray(nums));
+        System.out.println(maxSubArray(nums));
     }
 }

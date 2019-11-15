@@ -36,19 +36,56 @@ package com.xuyl.leetcode.brain_twists;
 // Related Topics 脑筋急转弯
 
 
+import org.junit.jupiter.api.Test;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution1033 {
     /**
-     * todo
-     * @param a
-     * @param b
-     * @param c
-     * @return
+     * 最小移动次数:
+     * 先将三个整数顺序确定, 以 x < y < z 的顺序排列;
+     *  ①. 如果 z - y == 2 或者 y - x == 2, 那么一定可以一步将另一个数移动到y的旁边, 变成3个连续的整数. 因此, 此时最小移动次数为1;
+     *  ②. 排除 ① 的情况, 若存在 z - y > 1(或 > 2, 因为 == 2 的情况已经包含在 ① 中了), 最小移动次数 +1;
+     *                   若存在 y - x > 1, 最小移动次数 +1; 即可得出最小移动次数;
+     * max = z - x - 2;
      */
     public int[] numMovesStones(int a, int b, int c) {
+        int[] nums = new int[2];
+        // 将三个数按照从小到大的顺序排序
+        if ( a > b ) {
+            a = a^b;
+            b = a^b;
+            a = a^b;
+        }
+        if ( b > c ) {
+            b = b^c;
+            c = b^c;
+            b = b^c;
+        }
+        if ( a > b ) {
+            a = a^b;
+            b = a^b;
+            a = a^b;
+        }
+        int cb = c - b;
+        int ba = b - a;
+        if ( cb == 2 || ba == 2 ) {
+            nums[0] = 1;
+        } else {
+            if ( cb > 2 ) {
+                nums[0]++;
+            }
+            if ( ba > 2 ) {
+                nums[0]++;
+            }
+        }
+        nums[1] = cb + ba - 2;
+        return nums;
+    }
 
-        return null;
+    @Test
+    public void testNumMovesStones(){
+        int[] nums = numMovesStones(1, 2, 4);
+        System.out.println(nums[0] + ":" + nums[1]);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

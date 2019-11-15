@@ -1,5 +1,7 @@
 package com.xuyl.leetcode.math;
 
+import org.junit.jupiter.api.Test;
+
 //判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
 //
 // 示例 1:
@@ -28,10 +30,12 @@ package com.xuyl.leetcode.math;
 // Related Topics 数学
 public class Solution9 {
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         int num = 12333;
-        System.out.println(new Solution9().isPalindromeAdvance(num));
+        System.out.println(isPalindromeAdvance(num));
     }
+
     public boolean isPalindromeBase(int x) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(x);

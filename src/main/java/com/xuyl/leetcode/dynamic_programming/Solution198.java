@@ -20,6 +20,7 @@ package com.xuyl.leetcode.dynamic_programming;
 // Related Topics 动态规划
 
 
+import org.junit.jupiter.api.Test;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution198 {
@@ -41,9 +42,10 @@ class Solution198 {
         return nums[nums.length - 1];
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void testRob() {
         int[] nums = {2,7,9,3,1};
-        System.out.println(new Solution198().rob(nums));
+        System.out.println(rob(nums));
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

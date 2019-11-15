@@ -6,6 +6,8 @@ package com.xuyl.leetcode.easy;
 //    给定 N，计算 F(N)。
 
 
+import org.junit.jupiter.api.Test;
+
 /**
  * @description: F(N) = F(N - 1) + F(N - 2)
  * @author: yaling.xu
@@ -36,9 +38,10 @@ public class Solution509 {
         return c;
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         int n = 3;
-        System.out.println(new Solution509().recursion(n));
-        System.out.println(new Solution509().circulation(n));
+        System.out.println(recursion(n));
+        System.out.println(circulation(n));
     }
 }

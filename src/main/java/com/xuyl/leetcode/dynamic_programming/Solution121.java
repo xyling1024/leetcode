@@ -22,6 +22,7 @@ package com.xuyl.leetcode.dynamic_programming;
 // Related Topics 数组 动态规划
 
 
+import org.junit.jupiter.api.Test;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution121 {
@@ -48,9 +49,10 @@ class Solution121 {
         return maxProfit;
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void testMaxProfit() {
         int[] prices = {7,6,4,3,1};
-        System.out.println(new Solution121().maxProfit(prices));
+        System.out.println(maxProfit(prices));
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

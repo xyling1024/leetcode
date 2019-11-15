@@ -43,6 +43,7 @@ package com.xuyl.leetcode.dynamic_programming;
 
 
 import com.xuyl.leetcode.utils.NumUtils;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -120,16 +121,15 @@ class Solution1025 {
         return dict[N];
     }
 
-    public static void main(String[] args) {
-        Solution1025 solution1025 = new Solution1025();
+    @Test
+    public void test() {
         for (int i = 1; i < 50; i++) {
-            if (solution1025.memorizedSearch(i, null) != solution1025.divisorGame(i)) {
-                System.out.println("failed:" + i + "; memorizedSearch:" + solution1025.memorizedSearch(i));
+            if (memorizedSearch(i, null) != divisorGame(i)) {
+                System.out.println("failed:" + i + "; memorizedSearch:" + memorizedSearch(i, null));
                 return;
             }
         }
         System.out.println("success");
     }
-
 }
 //leetcode submit region end(Prohibit modification and deletion)

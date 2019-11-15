@@ -24,6 +24,8 @@ package com.xuyl.leetcode.dynamic_programming;
 //
 // Related Topics 动态规划
 
+import org.junit.jupiter.api.Test;
+
 /**
  * @description: 爬楼梯  f(n) = f(n-1) + f(n-2)
  * @author: yaling.xu
@@ -52,9 +54,12 @@ public class Solution70 {
         return c;
     }
 
-    public static void main(String[] args) {
+
+    @Test
+    public void test() {
         int n = 2;
-        System.out.println(new Solution70().recursion(n));
-        System.out.println(new Solution70().circulation(n));
+        System.out.println(recursion(n));
+        System.out.println(circulation(n));
     }
+
 }
