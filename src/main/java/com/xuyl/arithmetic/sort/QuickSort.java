@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Test;
 import java.util.LinkedList;
 
 /**
- * @description: 快速排序
+ * @description: 快速排序：任选数组中一个对象，将比这个对象大的扔到对象的左边，小的放到对象的右边。
+ *                对已经分好的对象左右两边的数组继续进行这个操作，直到最后两边都只剩一个对象，整个数组就变成有序的了
+ *      时间复杂度：nlog(n)
  * @author: yaling.xu
  * @signature 天王盖地虎，胖墩吃脑腐。
  * @date: 2019/11/18 11:25
@@ -16,9 +18,6 @@ public class QuickSort {
     private int[] nums = {423, 453, 75, 23, 89, 223, 75, 0, 5};
 
     /**
-     * 快速排序：任选数组中一个对象，将比这个对象大的扔到对象的左边，小的放到对象的右边。
-     *          对已经分好的对象左右两边的数组继续进行这个操作，直到最后两边都只剩一个对象，整个数组就变成有序的了
-     *
      * 选数组中的第一个对象, 存入一个临时的变量tmp中. 申明两个指针, 一个指针i(从前向后移动), 一个指针j(从后向前移动):
      *      将 tmp 与 nums[j] 比较, 如果 tmp > nums[j], 则赋值 nums[i] = nums[j], 同时 i++;
      *      比较 tmp 与 nums[i], 如果 tmp < nums[i], 则赋值 nums[j] = nums[i], 同时 j++;
@@ -69,50 +68,5 @@ public class QuickSort {
             System.out.println(num);
         }
     }
-
-
-
-/*
-    public int[] quickSort(int[] nums) {
-        LinkedList<Integer> numList = new LinkedList<>();
-        for (int num : nums) {
-            numList.add(num);
-        }
-        numList = quickSort(numList);
-        for (int i = 0; i < numList.size(); i++) {
-            nums[i] = numList.get(i);
-        }
-        return nums;
-    }
-
-    public LinkedList<Integer> quickSort(LinkedList<Integer> nums) {
-        LinkedList<Integer> leftNums = new LinkedList<>();
-        LinkedList<Integer> rightNums = new LinkedList<>();
-        for (int i = 1; i < nums.size(); i++) {
-            if (nums.get(i) <= nums.get(0)) {
-                leftNums.add(nums.get(i));
-            } else {
-                rightNums.add(nums.get(i));
-            }
-        }
-        if (leftNums.size() > 1) {
-            leftNums = quickSort(leftNums);
-        }
-        if (rightNums.size() > 1) {
-            rightNums = quickSort(rightNums);
-        }
-        leftNums.addLast(nums.get(0));
-        leftNums.addAll(rightNums);
-        return leftNums;
-    }
-*/
-
-
-
-
-
-
-
-
 
 }
