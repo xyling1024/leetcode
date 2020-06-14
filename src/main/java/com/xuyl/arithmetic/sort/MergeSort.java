@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.LinkedList;
 
 /**
- * @description: 归并排序
+ * @description: 归并排序：将所有对象先分为只包含一个元素的数组, 然后两两合并. 保证每一个数组都是有序的, 最后整体有序.
  * @author: yaling.xu
  * @signature 天王盖地虎，胖墩吃脑腐。
  * @date: 2019/11/18 11:25
@@ -14,10 +14,6 @@ public class MergeSort {
 
     private int[] nums = {423, 453, 75, 23, 89, 223, 75, 0, 5};
 
-    /**
-     * 归并排序：将所有对象先分为只包含一个元素的数组, 然后两两合并. 保证每一个数组都是有序的, 最后整体有序.
-     * @return
-     */
     private void mergeSort(int start, int end) {
         // 需要排序的数列中超过一个对象
         if (end > start) {
