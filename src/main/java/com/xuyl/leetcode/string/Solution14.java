@@ -30,7 +30,7 @@ class Solution14 {
     /**
      * 对字符串数组进行排序后, 比较第一个和最后一个得到的公共前缀即为我们所求!
      */
-    public String longestCommonPrefix(String[] strs) {
+    public String longestCommonPrefix2(String[] strs) {
         String commonPreffix = "";
         if ( strs == null || strs.length <= 0 ) {
             return commonPreffix;
@@ -54,6 +54,39 @@ class Solution14 {
             }
         }
         return commonPreffix;
+    }
+
+    /**
+     * 遍历所有成员，获取每个成员与当前得到的公共前缀的公共前缀
+     * @param strs
+     * @return
+     */
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        byte[] resultByte = strs[0].getBytes();
+        int resultLen = resultByte.length;
+        for (int i = 1; i < strs.length; i++) {
+            // 获取strs[i]与result的公共前缀
+            byte[] bytes = strs[i].getBytes();
+            int len = resultLen > bytes.length ? bytes.length : resultLen;
+            boolean resetLen = true;
+            for (int j = 0; j < len; j++) {
+                if (bytes[j] != resultByte[j]) {
+                    resultLen = j;
+                    resetLen = false;
+                    break;
+                }
+            }
+            if (resetLen) {
+                resultLen = len;
+            }
+            if (resultLen == 0) {
+                return "";
+            }
+        }
+        return new String(resultByte, 0, 0, resultLen);
     }
 
     @Test
