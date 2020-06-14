@@ -21,14 +21,16 @@ package com.xuyl.leetcode.easy;
 // Related Topics 数学 二分查找
 
 
+import com.xuyl.anno.Todo;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
 
 import java.sql.SQLOutput;
 
 //leetcode submit region begin(Prohibit modification and deletion)
+@Todo("可以优化为二分法实现")
 class Solution69 {
-    // todo 可以优化为二分法实现
+
     public int mySqrt(int x) {
         if ( x == 0 || x == 1 ) {
             return x;
