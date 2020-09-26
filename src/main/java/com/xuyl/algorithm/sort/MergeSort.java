@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 
 /**
  * @description: 归并排序：将所有对象先分为只包含一个元素的数组, 然后两两合并. 保证每一个数组都是有序的, 最后整体有序.
+ *      时间复杂度：nlog(n)
+ *      稳定排序：yes
+ *      就地排序：no
  * @author: yaling.xu
  * @signature 天王盖地虎，胖墩吃脑腐。
  * @date: 2019/11/18 11:25
