@@ -1,8 +1,6 @@
-package com.xuyl.arithmetic.sort;
+package com.xuyl.algorithm.sort;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.LinkedList;
 
 /**
  * @description: 归并排序：将所有对象先分为只包含一个元素的数组, 然后两两合并. 保证每一个数组都是有序的, 最后整体有序.

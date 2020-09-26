@@ -1,4 +1,4 @@
-package com.xuyl.arithmetic.sort;
+package com.xuyl.algorithm.sort;
 
 import org.junit.jupiter.api.Test;
 

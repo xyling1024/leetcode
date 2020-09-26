@@ -1,6 +1,5 @@
-package com.xuyl.arithmetic.sort;
+package com.xuyl.algorithm.sort;
 
-import com.sun.deploy.util.ArrayUtil;
 import org.junit.jupiter.api.Test;
 
 /**

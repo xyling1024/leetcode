@@ -1,10 +1,6 @@
-package com.xuyl.arithmetic.sort;
+package com.xuyl.algorithm.sort;
 
 import org.junit.jupiter.api.Test;
-
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 
 /**
  * @description: 插入排序：将一个对象插入到有序列表中。

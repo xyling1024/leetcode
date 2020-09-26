@@ -1,10 +1,10 @@
-package com.xuyl.arithmetic.sort;
+package com.xuyl.algorithm.sort;
 
 /**
- * @description: 桶排序
+ * @description: 计数排序
  * @author: yaling.xu
  * @signature 天王盖地虎，胖墩吃脑腐。
  * @date: 2019/11/20 21:47
  */
-public class BucketSort {
+public class CountSort {
 }

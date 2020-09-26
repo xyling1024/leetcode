@@ -1,8 +1,6 @@
-package com.xuyl.arithmetic.sort;
+package com.xuyl.algorithm.sort;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.LinkedList;
 
 /**
  * @description: 快速排序：任选数组中一个对象，将比这个对象大的扔到对象的左边，小的放到对象的右边。
